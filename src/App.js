@@ -7,12 +7,14 @@ import UpdateUser from "./components/UpdateUser/UpdateUser";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={AllUser}></Route>
-      <Route path="/random" element={RandomUser}></Route>
-      <Route path="/save-user" element={SaveUser}></Route>
-      <Route path="/update-user" element={UpdateUser}></Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<AllUser></AllUser>} />
+        <Route path="/random" element={<RandomUser></RandomUser>} />
+        <Route path="/save-user" element={<SaveUser></SaveUser>} />
+        <Route path="/update-user" element={<UpdateUser></UpdateUser>} />
+      </Routes>
+    </>
   );
 }
 
