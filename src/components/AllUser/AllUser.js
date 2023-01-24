@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const AllUser = () => {
   const [users, setUser] = useState([]);
 
-  fetch("http://localhost:5000/users")
-    .then((response) => response.json())
-    .then((data) => setUser(data));
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then((response) => response.json())
+      .then((data) => setUser(data));
+  }, []);
 
   return (
     <div>
