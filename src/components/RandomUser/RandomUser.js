@@ -6,7 +6,7 @@ const RandomUser = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      await fetch("http://localhost:5000/users/")
+      await fetch("http://localhost:5000/user/all")
         .then((response) => response.json())
         .then((data) => setUsers(data));
     }
@@ -30,7 +30,7 @@ const RandomUser = () => {
   const randomId = Math.floor(Math.random() * (max - min + 1)) + min;
   useEffect(() => {
     if (randomId) {
-      fetch(`http://localhost:5000/users/random/${randomId}`)
+      fetch(`http://localhost:5000/user/random/${randomId}`)
         .then((response) => response.json())
         .then((data) => setRandomUser(data));
     }

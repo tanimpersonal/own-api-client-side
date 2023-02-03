@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<AllUser></AllUser>} />
         <Route path="/random" element={<RandomUser></RandomUser>} />
         <Route path="/save-user" element={<SaveUser></SaveUser>} />
-        <Route path="/update-user" element={<UpdateUser></UpdateUser>} />
+        <Route path="/update-user/:id" element={<UpdateUser></UpdateUser>} />
       </Routes>
     </>
   );
