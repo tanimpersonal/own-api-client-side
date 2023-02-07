@@ -13,16 +13,17 @@ const RandomUser = () => {
     fetchData();
   }, []);
   if (users.length >= 1) {
-    max = users[0].id;
-    min = users[0].id;
+    max = parseInt(users[0].id);
+    min = parseInt(users[0].id);
   }
   if (max && min) {
+    console.log(max);
     for (user of users) {
-      if (user.id > max) {
-        max = user.id;
+      if (parseInt(user.id) > max) {
+        max = parseInt(user.id);
       }
-      if (user.id < min) {
-        min = user.id;
+      if (parseInt(user.id) < min) {
+        min = parseInt(user.id);
       }
     }
   }
@@ -35,12 +36,20 @@ const RandomUser = () => {
         .then((data) => setRandomUser(data));
     }
   }, [randomId]);
-
+  if (randomUser) {
+    var { id, name, gender, contact, address, photoUrl } = randomUser;
+  }
   console.log(randomId, randomUser);
 
   return (
     <div>
-      <p>{randomUser?.id}</p>
+      <p>{id}</p>
+      <p>{name}</p>
+      <p>{gender}</p>
+      <p>{contact}</p>
+      <p>{address}</p>
+      <img src={photoUrl} alt="" />
+      <p></p>
     </div>
   );
 };
